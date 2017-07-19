@@ -1,0 +1,98 @@
+{
+	"id": "c527188d-0a4e-2faf-96fb-d0867aeeea85",
+	"name": "transfer",
+	"description": "",
+	"order": [
+		"609fe61f-7788-3354-3c90-2dff17e106b5",
+		"faf3244c-8ebd-7ad2-14aa-7d5e948214ac"
+	],
+	"folders": [],
+	"timestamp": 1500469638234,
+	"owner": "1592748",
+	"public": false,
+	"requests": [
+		{
+			"id": "609fe61f-7788-3354-3c90-2dff17e106b5",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/balance?account=1234567890",
+			"queryParams": [
+				{
+					"key": "account",
+					"value": "1234567890",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "c527188d-0a4e-2faf-96fb-d0867aeeea85",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:3000/balance?account=1234567890",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1500469650842,
+			"version": 2,
+			"responses": [],
+			"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"Balance response correct\"] = jsonData.amount != null;",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "faf3244c-8ebd-7ad2-14aa-7d5e948214ac",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/transfer",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c527188d-0a4e-2faf-96fb-d0867aeeea85",
+			"data": [
+				{
+					"key": "sourceAccountNumber",
+					"value": "1234567890",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "destinationAccountNumber",
+					"value": "1212312121",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "amount",
+					"value": "5000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "http://localhost:3000/transfer",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1500470057075,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
