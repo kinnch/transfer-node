@@ -4,7 +4,8 @@
 	"description": "",
 	"order": [
 		"609fe61f-7788-3354-3c90-2dff17e106b5",
-		"faf3244c-8ebd-7ad2-14aa-7d5e948214ac"
+		"faf3244c-8ebd-7ad2-14aa-7d5e948214ac",
+		"ad101e47-d97f-fb99-f96d-0297c880a56c"
 	],
 	"folders": [],
 	"timestamp": 1500469638234,
@@ -41,6 +42,36 @@
 			"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"Balance response correct\"] = jsonData.amount != null;",
 			"currentHelper": "normal",
 			"helperAttributes": {}
+		},
+		{
+			"id": "ad101e47-d97f-fb99-f96d-0297c880a56c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/balance?account=1234567890",
+			"queryParams": [
+				{
+					"key": "account",
+					"value": "1234567890",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": "\nvar jsonData = JSON.parse(responseBody);\ntests[\"Balance response correct\"] = jsonData.balance === 95000;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500472158400,
+			"name": "http://localhost:3000/balance?account=1234567890 copy",
+			"description": "",
+			"collectionId": "c527188d-0a4e-2faf-96fb-d0867aeeea85",
+			"responses": []
 		},
 		{
 			"id": "faf3244c-8ebd-7ad2-14aa-7d5e948214ac",
